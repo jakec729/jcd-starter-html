@@ -1,0 +1,23 @@
+body {
+	border-top: 1rem solid $accent-dark;
+}
+
+.container {
+	width: 90%;
+}
+
+
+.site-header {
+	background: #EEEFF2;
+}
+
+.row-right{
+	[class^='col'] {
+		float: right;
+	}
+}
+
+.page-section {
+	padding-top: 6em;
+	padding-bottom: 6em;
+}

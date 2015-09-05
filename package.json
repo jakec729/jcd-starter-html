@@ -1,0 +1,15 @@
+{
+  "name": "jcd_author_theme",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-sass": "^2.0.4",
+    "gulp-jade": "^1.1.0"
+  }
+}

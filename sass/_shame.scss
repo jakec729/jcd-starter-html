@@ -1,0 +1,45 @@
+
+
+.site-footer {
+    background-color: $accent-dark;
+    color: white;
+    padding: 2em 0;
+    font-family: $font-sans;
+    font-weight: 500;
+    margin: 0;
+
+    ul,
+    p,
+    h6 {
+	    font-size: 1.25rem;
+	    margin: 1rem 0;
+    }
+
+    a {
+	    color: #C0BAE8;
+    }
+
+    ul {
+    	margin-bottom: 0;
+    }
+}
+
+
+
+.sidebar {
+
+	section + section {
+		margin-top: 6em;
+	}
+
+	p {
+		color: grey(65);
+		font-size: 1.25rem;
+		line-height: 1.7em;
+	}
+}
+
+
+
+
+

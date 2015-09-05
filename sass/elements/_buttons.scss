@@ -1,0 +1,32 @@
+@mixin default-btn-colors {
+	background-color: grey(5);
+	color: $accent-dark;
+
+	&:hover {
+		background-color: $accent-dark;
+		color: white;
+		text-decoration: none;
+	}
+}
+
+@mixin btn($padding: .5em) {
+	padding: $padding;
+	border-radius: .5rem;
+	text-decoration: none;
+}
+
+@mixin btn-list-inline {
+	font-size: 2rem;
+
+	li {
+		padding: 0 0.5rem 2.5rem 0;
+	}
+}
+
+.read-more {
+	margin-top: 1em;
+	font-family: $font-sans;
+	display: inline-block;
+	@include btn(1rem 1.25rem);
+	@include default-btn-colors;
+}

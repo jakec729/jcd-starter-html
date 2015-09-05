@@ -1,0 +1,17 @@
+nav,
+nav a {
+	font-family: $font-sans;
+}
+
+
+.navbar {
+	padding: 2em 0;
+}
+
+// Clean version of navbar as default class
+.navbar-clean {
+  @extend .navbar-default;
+  background: none;
+  border: none;
+}
+
