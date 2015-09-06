@@ -32,10 +32,14 @@ html(lang="en")
 		main.page-content
 			block content
 
-		footer.site-footer
+		footer.site-footer.dark
 			div.container
-				ul.list-inline
-					li: h6.copyright &copy; Copyright 2015 <a href="http://www.jakecooperdesign.com">Jake Cooper Design</a>. All rights reserved.
-					li: <a href="#">Benjen Theme</a> by <a href="http://www.jakecooperdesign.com">Jake Cooper Design</a>.
+				block footer-content
+				section.copyright-section
+					ul.list-inline
+						li: h6.copyright &copy; Copyright 2015 <a href="http://www.jakecooperdesign.com">Jake Cooper Design</a>. All rights reserved.
+						li: <a href="#">Benjen Theme</a> by <a href="http://www.jakecooperdesign.com">Jake Cooper Design</a>.
 		
-		script(src="js/scripts.js")
+		script(src="/src/vendor/jquery/dist/jquery.min.js")
+		script(src="/src/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js")
+		script(src="/js/scripts.js")

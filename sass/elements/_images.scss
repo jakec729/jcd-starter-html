@@ -1,0 +1,28 @@
+@mixin circle-image {
+	border-radius: 50%;
+}
+
+.avatar {
+	@include circle-image
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+}
+
+figcaption,
+.caption,
+.longform .caption,
+.wp-caption-text,
+.longform .wp-caption-text {
+	margin-top: 1rem;
+	font-size: 1.25rem;
+	color: grey(40);
+	font-family: $font-sans;
+	// font-style: italic;
+}
+
+.wp-caption {
+	margin: 2.6em 0
+}

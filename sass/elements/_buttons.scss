@@ -9,24 +9,42 @@
 	}
 }
 
+@mixin btn-colors-dark {
+	background-color: darken($accent-dark, 15);
+	color: white;
+
+	&:hover {
+		background-color: grey(10);
+		color: $accent-dark;
+		text-decoration: none;
+	}
+}
+
 @mixin btn($padding: .5em) {
 	padding: $padding;
 	border-radius: .5rem;
 	text-decoration: none;
+	display: inline-block;
+	font-family: $font-sans;
+	@include transition;
 }
 
 @mixin btn-list-inline {
 	font-size: 2rem;
 
 	li {
-		padding: 0 0.5rem 2.5rem 0;
+		padding: 0 0.5rem 1.25rem 0;
 	}
+}
+
+.btn-default {
+	@include btn(1rem 1.25rem);
+	@include default-btn-colors;
+	border: none;
 }
 
 .read-more {
 	margin-top: 1em;
-	font-family: $font-sans;
-	display: inline-block;
 	@include btn(1rem 1.25rem);
 	@include default-btn-colors;
 }

@@ -5,6 +5,7 @@ var	autoprefixer = require('gulp-autoprefixer');
 var	plumber = require('gulp-plumber');
 var	browserSync = require('browser-sync');
 var jade = require('gulp-jade');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 // Static server
@@ -20,8 +21,10 @@ gulp.task('browserSync', function() {
 gulp.task('sass', function () {
     gulp.src('./sass/**/*.scss')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css'))
         .pipe(browserSync.stream());
  });

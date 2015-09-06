@@ -1,13 +1,19 @@
 @import "config/theme";
 @import "config/plugins";
 
+@import "elements/animation";
+@import "elements/responsive";
 @import "elements/color";
+@import "elements/images";
 @import "elements/typography";
 @import "elements/buttons";
 
+@import "components/forms";
 @import "components/nav";
 @import "components/article";
 @import "components/social";
+@import "components/bio";
+@import "components/comments";
 
 @import "layouts/master";
 

@@ -1,0 +1,24 @@
+mixin comment
+	li
+		article.comment
+			img.comment__avatar.avatar(src="http://unsplash.it/60/60")
+			div.comment__wrapper
+				p.comment__meta <span class="comment__author">Dorem Lipsum</span> <span class="comment__date">9/25/15</span>
+				div.comment__body
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus nesciunt corrupti dolores deserunt, deleniti quaerat quos tempora neque unde.
+					p Quis, debitis suscipit harum, sequi et facere! Iure nihil veritatis consequatur iusto vel eaque incidunt tenetur mollitia, repellat sapiente qui.
+					p Ipsum praesentium laudantium accusantium quaerat ad eveniet, alias, cumque ut magnam consectetur quidem. Assumenda totam fugiat minima. Sapiente, odio, hic.
+				p.comment__reply: a(href="#") Reply
+				block
+
+section.comments.article__comments
+	h3.comments__heading 5 Comments
+	ol.list-unstyled.comments-list
+		+comment
+		+comment
+			ol.subcomments.list-unstyled
+				+comment
+				+comment
+		+comment
+
+	include comment-form.jade

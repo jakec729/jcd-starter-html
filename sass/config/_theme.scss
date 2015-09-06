@@ -1,4 +1,8 @@
+$pace: .3s;
+
 $accent-dark: #474771;
+$light-cyan: #C0BAE8;
+
 $fa-font-path:        "../src/vendor/font-awesome/fonts";
 
 $font-sans: 'Roboto', Helvetica, Arial, sans-serif;
@@ -14,7 +18,7 @@ $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
 
 
-$line-height-base: 1.6;
-$line-height-computed: 1.6;
+$line-height-base: 24px;
+$line-height-computed: 24px;
 
 // $grid-gutter-width: 16px;

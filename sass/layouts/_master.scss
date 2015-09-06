@@ -21,3 +21,57 @@ body {
 	padding-top: 6em;
 	padding-bottom: 6em;
 }
+
+.dark {
+    background-color: $accent-dark;
+    color: grey(25);
+}
+
+.site-footer {
+    padding: 2em 0 2em;
+    font-family: $font-sans;
+    font-weight: 500;
+    margin: 0;
+
+    ul,
+    p,
+    h6 {
+	    font-size: 1.25rem;
+	    margin: 1rem 0;
+    }
+
+    .copyright-section a {
+	    color: $light-cyan;
+    }
+
+    ul {
+    	margin-bottom: 0;
+    }
+
+    .footer-widgets {
+        margin-top: 2em;
+    }
+
+    section + section {
+    	margin-top: 4em;
+    }
+
+    .sidebar__section + .sidebar__section {
+    	@include bp-max($screen-sm) {
+	    	margin-top: 4em;
+    	}
+    }
+}
+
+.sidebar {
+
+	section + section {
+		margin-top: 6em;
+	}
+
+	p {
+		color: grey(65);
+		font-size: 1.25rem;
+		line-height: 1.7em;
+	}
+}

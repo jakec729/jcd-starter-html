@@ -1,0 +1,29 @@
+div.comments-form
+  h4.comments-form__heading Leave a Reply
+
+  form
+    div.row
+      div.form-group.col-sm-6
+        label.control-label(for="commentName") Name*
+        div
+          input#commentName.form-control(type="text", placeholder="Jane Doe", required)
+
+      div.form-group.col-sm-6
+        label.control-label(for="commentEmail") Email*
+        div
+          input#commentEmail.form-control(type="email", placeholder="jane.doe@example.com", required)
+    
+    div.row
+      div.form-group.col-sm-12
+        label.control-label(for="commentWebsite") Website
+        div
+          input#commentWebsite.form-control(type="url", placeholder="www.example.com")
+
+    div.row
+      div.form-group.col-sm-12
+        label.control-label(for="commentText") Comment*
+        div
+          textarea.form-control(name="commentText", rows="10", required)
+
+    div.form-group
+      button.btn.btn-default(type="submit") Post Comment

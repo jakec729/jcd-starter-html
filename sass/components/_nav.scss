@@ -8,6 +8,14 @@ nav a {
 	padding: 2em 0;
 }
 
+.navbar-collapse {
+	border: none;
+
+	.nav li {
+		padding: 1em 0;
+	}
+}
+
 // Clean version of navbar as default class
 .navbar-clean {
   @extend .navbar-default;
@@ -15,3 +23,13 @@ nav a {
   border: none;
 }
 
+.post-nav {	
+	li {
+		padding: 1em 0 2em;
+		border-top: 1px solid grey(5);
+	}
+
+	a {
+		font-size: 1.75rem;
+	}
+}
