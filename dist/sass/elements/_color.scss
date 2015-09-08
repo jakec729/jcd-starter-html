@@ -1,0 +1,5 @@
+@function grey($percent) {
+	$percent: 100 - $percent;
+	$rgb: ((255/100) * $percent);
+	@return rgb($rgb, $rgb, $rgb);
+}

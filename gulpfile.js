@@ -6,6 +6,7 @@ var	plumber = require('gulp-plumber');
 var	browserSync = require('browser-sync');
 var jade = require('gulp-jade');
 var sourcemaps = require('gulp-sourcemaps');
+var clean = require('gulp-clean');
 
 
 // Static server
@@ -15,6 +16,11 @@ gulp.task('browserSync', function() {
             baseDir: "./"
         }
     });
+});
+
+gulp.task('clean', function(){
+    return gulp.src('./dist', {read: false})
+        .pipe(clean());
 });
 
 
@@ -51,3 +57,18 @@ gulp.task('watch', ['sass', 'jade'], function(){
 	gulp.watch('views/**/*.jade', ['jade']);
 	gulp.watch("**/*.html").on('change', browserSync.reload);
 });
+
+gulp.task('build', ['clean'], function(){
+    gulp.src([
+            './*.html',
+            './sass/**/*',
+            './css/**/*',
+            './js/**/*',
+            'bower.json',
+            'package.json',
+        ], { base: "."})
+        .pipe(gulp.dest("./dist"));
+});
+
+
+

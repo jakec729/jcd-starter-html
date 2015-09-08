@@ -1,0 +1,23 @@
+.social-icons {
+	@include btn-list-inline;
+
+	a {
+		@include btn;
+		@include default-btn-colors;
+		font-size: 2rem;
+	}
+
+	.dark & {
+
+		a {
+			@include btn-colors-dark;
+		}
+	}
+}
+
+.social__share {
+	ul {
+		margin-top: .75em;
+		margin-left: 0;
+	}
+}
