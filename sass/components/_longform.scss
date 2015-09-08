@@ -1,0 +1,113 @@
+@mixin body_float($direction) {
+	width: 35%;
+	float: #{$direction};
+	padding-bottom: .5rem;
+
+	@if #{$direction} == left {
+		margin-right: 2rem;
+	}
+
+	@if #{$direction} == right {
+		margin-left: 2rem;
+	}
+
+
+	& + * {
+		margin-top: 0;
+	}
+}
+
+.longform {
+	font-size: 1.5rem;
+	line-height: 1.8em;
+
+	.alignleft {
+		@include bp-min($screen-sm) {
+			@include body_float("left");
+		}
+	}
+
+	.alignright {
+		@include bp-min($screen-sm) {
+			@include body_float("right");
+		}
+	}
+
+
+	p,hr {
+		font-size: inherit;
+		line-height: inherit;
+		margin: 2.4em 0;
+	}
+
+	.lead {
+		font-size: 2rem;
+		line-height: 1.6em;
+		margin: 1.8em 0;
+	}
+
+	h2 {
+		color: $accent-dark;
+	}
+
+	h3 {
+		color: grey(60);
+	}
+
+	h4 {
+		font-size: 1em;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-weight: 700;
+
+		& + p {
+			margin-top: 0;
+		}
+	}
+
+	h2,h3,h4,h5,h6 {
+		margin-top: 3em;
+	}
+
+	ol,
+	ul {
+		padding-left: 3rem;
+	}
+
+	li {
+		line-height: 1.5;
+
+		& + li {
+			margin-top: 2rem;
+		}
+	}
+}
+
+blockquote {
+	padding: 0;
+	color: grey(50);
+	font-style: italic;
+	font-weight: 100;
+	border: none;
+	margin: 2em 0;
+	font-size: 2rem;
+	line-height: 1.6em;
+
+	cite {
+		font-style: normal;
+	}
+
+	p,
+	.longform & p {
+		font-family: $font-sans;
+		font-style: normal;
+		margin-top: 1rem;
+		font-weight: 400;
+		color: grey(65); 
+		font-size: 1.75rem;
+
+		&:before {
+			content: "\2014  ";
+		}
+	}
+}

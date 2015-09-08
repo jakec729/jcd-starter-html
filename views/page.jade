@@ -1,9 +1,8 @@
-extends layouts/right-sidebar.jade
+extends layouts/no-sidebar.jade
 
 block body
 	div.article.article--single
 		header.article__header
-			p.article__category: a(href="/archive.html") Essay
 			h1.article__heading Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 		section.article__body.longform
 			p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempora ab inventore earum, perspiciatis excepturi adipisci fuga exercitationem libero nisi.
@@ -65,37 +64,3 @@ block body
 
 			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aliquid atque delectus explicabo distinctio necessitatibus rem id rerum, quo assumenda saepe omnis obcaecati facere deleniti asperiores! Provident deserunt veritatis, animi voluptas officia? Est, eum, distinctio.
 			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aliquid atque delectus explicabo distinctio necessitatibus rem id rerum, quo assumenda saepe omnis obcaecati facere deleniti asperiores! Provident deserunt veritatis, animi voluptas officia? Est, eum, distinctio.
-
-			h2 Lorem Ipsum Dolor
-
-			figure.wp-caption.alignnone
-				img.wp-image-1(src="http://unsplash.it/600/400", height="400", width="600", alt="Placeholder")
-				figcaption.wp-caption-text Lorem ipsum dolor sit.
-
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aliquid atque delectus explicabo distinctio necessitatibus rem id rerum, quo assumenda saepe omnis obcaecati facere deleniti asperiores! Provident deserunt veritatis, animi voluptas officia? Est, eum, distinctio.
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aliquid atque delectus explicabo distinctio necessitatibus rem id rerum, quo assumenda saepe omnis obcaecati facere deleniti asperiores! Provident deserunt veritatis, animi voluptas officia? Est, eum, distinctio.
-			
-			div.wp-caption.alignnone
-				img.wp-image-1(src="http://unsplash.it/600/400", height="400", width="600", alt="Placeholder")
-				p.wp-caption-text Lorem ipsum dolor sit.
-
-			blockquote Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum eligendi rerum illum, ipsam, asperiores libero beatae! Inventore quia consequatur aliquid natus, fugiat iusto rerum id, hic error eaque. Enim, maxime.
-				p: cite Dorem Lipsum
-
-			h2 Lorem Ipsum Dolor
-
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aliquid atque delectus explicabo distinctio necessitatibus rem id rerum, quo assumenda saepe omnis obcaecati facere deleniti asperiores! Provident deserunt veritatis, animi voluptas officia? Est, eum, distinctio.
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aliquid atque delectus explicabo distinctio necessitatibus rem id rerum, quo assumenda saepe omnis obcaecati facere deleniti asperiores! Provident deserunt veritatis, animi voluptas officia? Est, eum, distinctio.
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquid provident rem incidunt excepturi totam porro dolorum sequi nostrum adipisci.
-
-		footer.article__footer
-			include partials/social-share.jade
-			include partials/post-nav.jade
-			div.article__meta
-				include partials/author-bio.jade
-				ul.list-unstyled
-					li <i class="fa fa-fw fa-calendar"></i> Thursday, 9/25
-					li <i class="fa fa-fw fa-tag"></i> <a href="#">Tag</a>, <a href="#">Tag</a>, <a href="#">Tag</a>, <a href="#">Tag</a> 
-
-			include partials/comments.jade
-

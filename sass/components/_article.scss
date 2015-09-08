@@ -30,6 +30,10 @@
 		}
 	}
 
+	a:hover {
+		text-decoration: none;
+	}
+
 }
 
 .article__category {
@@ -45,6 +49,16 @@
 		font-size: 1rem;
 		margin-bottom: 0;
 		color: grey(20);
+	}
+
+	a {
+		color: inherit;
+		@include transition;
+
+		&:hover {
+			text-decoration: none;
+			color: $accent-dark;
+		}
 	}
 }
 
