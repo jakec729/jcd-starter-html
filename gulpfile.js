@@ -13,7 +13,7 @@ var clean = require('gulp-clean');
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./app"
         }
     });
 });
@@ -25,22 +25,22 @@ gulp.task('clean', function(){
 
 
 gulp.task('sass', function () {
-    gulp.src('./sass/**/*.scss')
+    gulp.src('app/sass/**/*.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('app/css'))
         .pipe(browserSync.stream());
  });
 
 
 gulp.task('jade', function() {
-    gulp.src('./views/*.jade')
+    gulp.src('app/views/*.jade')
         .pipe(plumber())
         .pipe(jade({ pretty: true }))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./app'));
 });
 
 gulp.task('default', ['watch']);
@@ -49,24 +49,28 @@ gulp.task('watch', ['sass', 'jade'], function(){
 
 	browserSync.init({
 	    server: {
-	        baseDir: "./"
+	        baseDir: "./app"
 	    }
 	});
 
-    gulp.watch('sass/**/*.scss', ['sass']);
-	gulp.watch('views/**/*.jade', ['jade']);
-	gulp.watch("**/*.html").on('change', browserSync.reload);
+    gulp.watch('app/sass/**/*.scss', ['sass']);
+	gulp.watch('app/views/**/*.jade', ['jade']);
+	gulp.watch("app/**/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('build', ['clean'], function(){
     gulp.src([
-            './*.html',
-            './sass/**/*',
-            './css/**/*',
-            './js/**/*',
+            'app/*.html',
+            'app/sass/**/*',
+            'app/css/**/*',
+            'app/js/**/*',
+        ], { base: "./app"})
+        .pipe(gulp.dest("./dist"));
+
+    gulp.src([
             'bower.json',
             'package.json',
-        ], { base: "."})
+        ], { base: "./"})
         .pipe(gulp.dest("./dist"));
 });
 

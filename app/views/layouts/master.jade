@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="x-ua-compatible", content="ie=edge")
+		title JCD Author Theme
+		meta(name="description", content="JCD Author Theme")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", href="css/style.css")
+
+	body
+		header.site-header
+			nav.navbar.navbar-clean
+				div.container
+					div.navbar-header
+						button.navbar-toggle.collapsed(type="button", data-toggle="collapse" data-target="#bs-example-navbar-collapse-1", aria-expanded="false")
+							span.sr-only Toggle Navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						a.navbar-brand(href="/") Author Theme
+
+					div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+						ul.nav.navbar-nav.navbar-right
+							li: a(href="/") Home
+							li: a(href="/archive.html") Essays
+							li: a(href="/page.html") About
+							li: a(href="#") Contact
+							li#navSearch.search
+								a(href="#") 
+									<span class="hidden">Search</span><i class="fa fa-fw fa-search"></i>
+								form#navSearchForm: input.form-control(type="text", placeholder="Search...")
+			
+			block hero
+
+		main.page-content
+			block content
+
+		footer.site-footer.dark
+			div.container
+				block footer-content
+				section.copyright-section
+					ul.list-inline
+						li: h6.copyright &copy; Copyright 2015 <a href="http://www.jakecooperdesign.com">Jake Cooper Design</a>. All rights reserved.
+						li: <a href="#">Benjen Theme</a> by <a href="http://www.jakecooperdesign.com">Jake Cooper Design</a>.
+		
+		script(src="vendor/jquery/dist/jquery.min.js")
+		script(src="vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js")
+		script(src="/js/scripts.js")

@@ -1,0 +1,25 @@
+$pace: .3s !default;
+
+$accent-dark: #474771 !default;
+$light-cyan: #C0BAE8 !default;
+$bg-color: #FFFFFF !default;
+$header-bg-color: #EEEFF2 !default;
+$link-color: #337ab7 !default;
+
+$fa-font-path:        "../vendor/font-awesome/fonts" !default;
+
+$font-sans: 'Roboto', Helvetica, Arial, sans-serif !default;
+$font-serif: 'Merriweather', Georgia, serif !default;
+
+$font-family-sans-serif:  $font-sans !default;
+$font-family-serif:       $font-serif !default;
+$font-family-base:        $font-family-serif !default;
+
+$headings-font-family:    $font-sans !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+
+$line-height-base: 24px !default;
+$line-height-computed: 24px !default;
