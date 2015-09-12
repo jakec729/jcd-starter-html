@@ -14,5 +14,15 @@ $(document).ready(function(){
 		}
 	});
 
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) { 
+			var $form = $('#navSearch');
+
+			if ($form.hasClass('opened')) {
+				$form.removeClass('opened');
+			}
+		}
+	});
+
 
 });
