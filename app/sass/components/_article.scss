@@ -8,6 +8,25 @@
 	}
 }
 
+.article--image {
+
+	.article__tn {
+		margin-bottom: 1em;
+	}
+	
+	@include bp-min($screen-md) {
+		.article-excerpt__body {
+			padding-right: 20em;
+		}
+
+		.article__tn {
+			margin-top: 1em;
+			width: 18em;
+			float: right;
+		}
+	}
+}
+
 .article__heading {
 
 	.article & {

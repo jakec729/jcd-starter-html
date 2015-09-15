@@ -40,6 +40,10 @@
 		margin: 2.4em 0;
 	}
 
+	hr.spacer {
+		margin: 4em 0;
+	}
+
 	.lead {
 		font-size: 2rem;
 		line-height: 1.6em;
@@ -72,6 +76,10 @@
 	ol,
 	ul {
 		padding-left: 3rem;
+	}
+
+	.list-inline {
+		padding-left: 0;
 	}
 
 	li {

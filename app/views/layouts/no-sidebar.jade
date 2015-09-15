@@ -1,7 +1,9 @@
 extends master.jade
 
-block hero
-	include ../partials/primary-hero.jade
+block header
+	header.site-header
+		include ../partials/nav.jade
+		include ../partials/primary-hero.jade
 
 block content
 	div.container
