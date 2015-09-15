@@ -8,6 +8,8 @@
 	}
 }
 
+$article_tn_width: 12em;
+
 .article--image {
 
 	.article__tn {
@@ -16,12 +18,12 @@
 	
 	@include bp-min($screen-md) {
 		.article-excerpt__body {
-			padding-right: 20em;
+			padding-right: $article_tn_width + 2em;
 		}
 
 		.article__tn {
 			margin-top: 1em;
-			width: 18em;
+			width: $article_tn_width;
 			float: right;
 		}
 	}

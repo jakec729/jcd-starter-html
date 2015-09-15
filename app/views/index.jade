@@ -1,5 +1,10 @@
 extends layouts/no-sidebar.jade
 
+block header
+	header.site-header.image-well.dark(style="background-image: url('https://unsplash.it/g/1400/600?image=587');")
+		include partials/nav.jade
+		include partials/primary-hero.jade
+
 block body
 	div.articles
 		header.section__header
