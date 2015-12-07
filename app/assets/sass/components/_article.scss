@@ -1,0 +1,52 @@
+.article {
+	& + & {
+		margin-top: 6em;
+	}
+}
+
+.articles {
+	margin-bottom: 4em;
+}
+
+.single {
+
+	.article__tags {
+		margin: 0;
+	}
+
+	.article__header {
+		@include block-separator();
+	}
+
+	.article__meta {
+		margin: .5em 0;
+	}
+}
+
+.article__heading {
+	font-size: mt(3);
+	margin-top: .25em;
+	@include block-separator();
+
+	a {
+		@include hover-link();
+	}
+}
+
+.article__meta {
+	font-size: .85em;
+	font-weight: 400;
+	color: grey(30);
+
+	.articles & {
+		margin: 0;
+	}
+}
+
+.article__img {
+	margin-top: 0;
+}
+
+.article__footer {
+	margin-top: 6em;
+}

@@ -1,0 +1,5 @@
+@mixin separator( $direction: 'top', $spacing: $separator-spacing, $border: $separator-border ){
+	margin-#{$direction}: $spacing;
+	padding-#{$direction}: $spacing;
+	border-#{$direction}: $border;
+}

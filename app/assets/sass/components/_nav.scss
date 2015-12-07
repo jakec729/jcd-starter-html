@@ -1,0 +1,17 @@
+$nav-collapse-bp: $screen-sm;
+
+nav {
+	text-align: center;
+
+	ul {
+		@include bp-min($nav-collapse-bp) {
+			@include list-inline;
+		}
+	}
+
+	ul li a {
+		text-decoration: none;
+		padding: 1em;
+	}
+
+}

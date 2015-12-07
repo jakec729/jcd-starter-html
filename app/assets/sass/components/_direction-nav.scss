@@ -1,0 +1,43 @@
+.direction-nav {
+	margin: 2em 0;
+	border-top: 1px solid grey(20);
+	border-bottom: 1px solid grey(20);
+	@include clearfix;
+
+	ul {
+		margin: 0;
+	}
+
+	li {
+		padding: 1em 0;
+		margin: 0;
+
+		@include bp-min($screen-xs){
+			width: 50%;
+			float: left;
+			margin: 0;
+		}
+
+		&.left {
+			@include bp-min($screen-xs) {
+				text-align: left;
+			}
+		}
+
+		a {
+			@include bp-min($screen-xs) {
+				display: inline-block;
+			}
+		}
+
+		&.right {
+			border-top: 1px solid grey(20);
+
+			@include bp-min($screen-xs) {
+				text-align: right;
+				border-top: none;
+				border-left: 1px solid grey(20);
+			}
+		}
+	}
+}

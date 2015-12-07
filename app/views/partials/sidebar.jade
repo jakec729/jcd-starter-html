@@ -1,41 +1,43 @@
-aside.page-section.sidebar.col.col-sm-12.col-md-4.col-md-offset-1.col-lg-3
-	section.sidebar__section.article-links
-		div.widget.recent_posts-widget
-			header.widget__header
-				h2.widget__heading Recent Posts
-			ul.list-unstyled
-				li
-					p: a.article__category(href="/archive.html") Lorem
-					h4.article__heading: a(href="#") Lorem ipsum dolor sit amet.
-				li
-					p: a.article__category(href="/archive.html") Lorem
-					h4.article__heading: a(href="#") Vero, pariatur non amet ducimus!
-				li
-					p: a.article__category(href="/archive.html") Lorem
-					h4.article__heading: a(href="#") Aut inventore quis sint, vel!
-				li
-					p: a.article__category(href="/archive.html") Lorem
-					h4.article__heading: a(href="#") Nam deserunt blanditiis, asperiores in.
-				li
-					p: a.article__category(href="/archive.html") Lorem
-					h4.article__heading: a(href="#") Corrupti, provident labore quis molestias!
+article.widget
+	h4.widget__heading Recent Posts
+	div.widget__body
+		ul.widget-post-list.list-unstyled
+			li.widget-post
+				img(src="http://unsplash.it/600/300", alt="Widget Post")
+				p.widget-post__date Dec 12
+				h5.widget-post__title: a(href="#") Widget Post in Sidebar
+			li.widget-post
+				img(src="http://unsplash.it/600/300", alt="Widget Post")
+				p.widget-post__date Dec 12
+				h5.widget-post__title: a(href="#") Widget Post in Sidebar
+			li.widget-post
+				img(src="http://unsplash.it/600/300", alt="Widget Post")
+				p.widget-post__date Dec 12
+				h5.widget-post__title: a(href="#") Widget Post in Sidebar
+			li.widget-post
+				img(src="http://unsplash.it/600/300", alt="Widget Post")
+				p.widget-post__date Dec 12
+				h5.widget-post__title: a(href="#") Widget Post in Sidebar
 
-	section.sidebar__section
-		div.text-widget
-			header.widget__header
-				h2.widget__heading About Benjen
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur soluta, alias maxime sequi temporibus ullam error maiores nemo harum fuga, saepe accusamus nisi obcaecati minima, illum velit facilis. Eius placeat, suscipit est nulla beatae iure.
+article.widget.widget--links
+	h4.widget__heading Featured Links
+	div.widget__body
+		ul.list-unstyled
+			li.widget__link: a(href="#") Lorem ipsum dolor sit.
+			li.widget__link: a(href="#") Cum fuga omnis nulla.
+			li.widget__link: a(href="#") Dolorum vitae aspernatur voluptatem!
+			li.widget__link: a(href="#") Eaque consectetur officiis possimus.
+			li.widget__link: a(href="#") Incidunt, aliquam magnam error.
 
-	section.sidebar__section
-		div.widget.social-widget
-			header.widget__header
-				h2.widget__heading Follow Us
-			ul.list-inline.social-icons
-				li: a(href="#"): i.fa.fa-fw.fa-facebook
-				li: a(href="#"): i.fa.fa-fw.fa-twitter
-				li: a(href="#"): i.fa.fa-fw.fa-linkedin
-				li: a(href="#"): i.fa.fa-fw.fa-pinterest
-				li: a(href="#"): i.fa.fa-fw.fa-instagram
-				li: a(href="#"): i.fa.fa-fw.fa-wordpress
-				li: a(href="#"): i.fa.fa-fw.fa-reddit
-				li: a(href="#"): i.fa.fa-fw.fa-behance
+article.widget.widget--social
+	h4.widget__heading Social
+	div.widget__body
+		ul.list-inline
+			li: a(href="#").btn--small.btn-default: i.fa.fa-fw.fa-facebook
+			li: a(href="#").btn--small.btn-default: i.fa.fa-fw.fa-twitter
+			li: a(href="#").btn--small.btn-default: i.fa.fa-fw.fa-pinterest
+			li: a(href="#").btn--small.btn-default: i.fa.fa-fw.fa-linkedin
+			li: a(href="#").btn--small.btn-default: i.fa.fa-fw.fa-behance
+			li: a(href="#").btn--small.btn-default: i.fa.fa-fw.fa-instagram
+			li: a(href="#").btn--small.btn-default: i.fa.fa-fw.fa-github
+			li: a(href="#").btn--small.btn-default: i.fa.fa-fw.fa-rss

@@ -1,0 +1,26 @@
+@mixin transition($speed: $pace) {
+	transition: all $speed;
+}
+
+@mixin animate($name, $duration: $pace, $easing: linear) {
+	animation-name: #{$name};
+	animation-duration: $duration;
+	animation-timing-function: #{$easing};
+
+	@at-root {
+		@keyframes #{$name} {
+			@content;
+		}
+	}
+}
+
+@mixin delay-each($delay, $count: 6, $selector: null) {
+	$current_delay: 0;
+
+	@for $i from 2 to $count {
+		$current_delay: $current_delay + $delay;
+		&:nth-of-type(#{$i}) #{$selector}{
+			animation-delay: $current-delay;
+		}
+	}
+}

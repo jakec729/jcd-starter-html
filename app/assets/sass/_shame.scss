@@ -1,0 +1,20 @@
+.hidden {
+	display: none;
+}
+
+.example {
+	padding: 2em;
+	margin-bottom: 2em;
+	background-color: $white;
+}
+
+.example__heading {
+	margin-top: 0;
+	font-size: 1rem;
+	font-weight: 400;
+	color: $primary-color;
+	padding: 1em 0;
+	border-bottom: 2px solid grey(10);
+	@include tracking;
+}
+

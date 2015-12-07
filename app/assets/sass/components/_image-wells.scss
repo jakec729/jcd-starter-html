@@ -1,0 +1,44 @@
+@mixin image-well() {
+	background-size: cover !important;
+	background-position: center center;	
+
+	.overlay {
+		@include transition;
+		// padding: 2em 0;
+		background: rgba(0,0,0,0.2);
+	}
+}
+
+
+
+.image-well {
+	@include image-well;
+	background-color: $off-white !important;
+
+	&-solo {
+		min-height: 50vh;
+	}
+}
+
+
+.image-well-expand {
+	@include image-well;
+
+	@include bp-min($medium-screen){
+		&:hover .overlay {
+			padding: 4em 0;
+			background: rgba(0,0,0,0.5);
+		}		
+	}
+
+}
+
+.well-dark {
+	&,
+	p,
+	a,
+	h1,h2,h3,h4,h5,h6 {
+		color: $white;
+	}
+
+}

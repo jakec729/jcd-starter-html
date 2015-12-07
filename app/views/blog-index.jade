@@ -1,0 +1,43 @@
+extends layouts/master-sidebar.jade
+
+block hero
+	header.page__header.dark
+		div.container
+			h1.page__heading Blog
+
+block content
+	section.articles
+		article.article
+			header.article__header
+				p.article__meta Dec 12, 2015
+				h2.article__heading: a(href="/single.html") Article Title Post Here
+			figure.article__img
+				img(src="http://unsplash.it/800/400/", alt="Placeholder Blog Image")
+			div.article__body
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam, qui quo quod similique, illum ab quisquam illo veritatis ullam tempora eaque temporibus? Optio, modi.
+				p Quis autem voluptate, fugit expedita esse quae dignissimos magnam labore impedit doloremque vero architecto nihil ad fuga laboriosam dolor earum eos recusandae cupiditate eveniet? Eligendi.
+				p Totam a iure labore inventore natus laboriosam architecto nisi atque. Iusto nostrum voluptatibus corrupti, iste aut error recusandae nobis fuga architecto ex autem odit corporis?
+				a.btn.btn-primary(href="#") Continue Reading &rarr;
+		article.article
+			header.article__header
+				p.article__meta Dec 12, 2015
+				h2.article__heading: a(href="/single.html") Article Title Post Here
+			figure.article__img
+				img(src="http://unsplash.it/800/400/", alt="Placeholder Blog Image")
+			div.article__body
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam, qui quo quod similique, illum ab quisquam illo veritatis ullam tempora eaque temporibus? Optio, modi.
+		article.article
+			header.article__header
+				p.article__meta Dec 12, 2015
+				h2.article__heading: a(href="/single.html") Article Title Post Here
+			figure.article__img
+				img(src="http://unsplash.it/800/400/", alt="Placeholder Blog Image")
+			div.article__body
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam, qui quo quod similique, illum ab quisquam illo veritatis ullam tempora eaque temporibus? Optio, modi.
+				p Quis autem voluptate, fugit expedita esse quae dignissimos magnam labore impedit doloremque vero architecto nihil ad fuga laboriosam dolor earum eos recusandae cupiditate eveniet? Eligendi.
+				a.btn.btn-primary(href="#") Continue Reading &rarr;
+
+	nav.post-nav.direction-nav
+		ul.list-unstyled
+			li.left: a(href="#") &larr; Older Posts
+			li.right: a(href="#") Newer Posts &rarr;

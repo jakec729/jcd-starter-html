@@ -1,0 +1,9 @@
+.site-header {
+	padding: 1em 0;
+	background: $white;
+
+	.site-title {
+		line-height: 1;
+		font-size: modular-type(3);
+	}
+}

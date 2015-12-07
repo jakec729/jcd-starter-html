@@ -1,0 +1,13 @@
+.img-block {
+
+}
+
+.img-block__heading {
+	@include divider('bottom');
+}
+
+.img-block__body {
+	p {
+		margin-top: 0;
+	}
+}

@@ -1,0 +1,5 @@
+@function grey($percent) {
+	$value: 100 - $percent;
+	$grey: $value * (255/100);
+	@return rgba($grey, $grey, $grey, 1);
+}

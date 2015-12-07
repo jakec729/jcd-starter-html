@@ -1,0 +1,18 @@
+@mixin divider( $direction: 'bottom', $space:1em, $border: 1px solid grey(20) ){
+	margin-#{$direction}: $space;
+	padding-#{$direction}: $space;
+	border-#{$direction}: $border;
+}
+
+.dark {
+	background-color: darken($primary-color, 20%);
+
+	* {
+		color: white;
+	}
+}
+
+@mixin icon($var) {
+	font-family: 'FontAwesome';
+	content: $var;
+}

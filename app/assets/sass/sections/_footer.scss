@@ -1,0 +1,8 @@
+.site-footer {
+	padding: .5em 0;
+	background: $white;
+
+	a {
+		@include hover-link($underline: true);
+	}
+}

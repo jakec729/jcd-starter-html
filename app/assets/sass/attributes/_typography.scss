@@ -1,0 +1,227 @@
+/* Functions */
+/* -------------------------------------- */
+
+@function em($px, $context: $base-font-size){
+	@return ($px / $context) + 0em;
+}
+
+/* Mixins */
+/* -------------------------------------- */
+
+@mixin tracking($tracking: $default-tracking) {
+	text-transform: uppercase;
+	letter-spacing: $tracking;
+}
+
+@mixin block($color: $block-color, $width: $block-width) {
+	content: '';
+	display: block;
+	background: $color;
+	width: $width;
+}
+
+@mixin block-separator($color: $block-color, $width: $block-width, $space: $block-margin, $height: $block-height, $centered: false){
+	margin-bottom: $space;
+
+	&:after{
+		@include block($color, $width);
+		height: $height;
+		margin-top: $space;	
+
+		@if $centered {
+			margin-left: auto;
+			margin-right: auto;
+		}	
+	}
+}
+
+@mixin hover-link($color: $primary-dark, $underline: false) {
+	text-decoration: none;
+
+	&:hover {
+		@if $underline == true {
+			text-decoration: underline;
+		}
+		color: $color;
+	}
+}
+
+.hover-link {
+	@include hover-link();
+}
+
+@mixin indent($indent: $base-indent){
+	margin-left: $indent;
+	margin-right: $indent;
+}
+
+@mixin outdent($indent: $base-indent){
+	margin-left: (-1 * $indent);
+	margin-right: (-1 * $indent);
+}
+
+@mixin context-outdent($outdent, $container){
+	@include outdent( context($outdent, $container) );
+	width: 100% + context( (2 * $outdent), $container);
+}
+
+@function modular-type( $level, $base: $base-font-size, $ratio: $modular-type-ratio ){
+	$size: $base;
+
+	@if ($level > 1) {
+		@for $i from 1 to ($level){
+			$size: $size * $ratio;
+		}
+	}
+
+	@if ($level < 1) {
+		@for $i from 1 to ($level){
+			$size: $size / $ratio;
+		}
+	}
+
+	@return $size;
+}
+
+@function mt( $level, $base: $base-font-size, $ratio: $modular-type-ratio ){
+	@return modular-type( $level, $base, $ratio );
+}
+
+/* Base Styling */ 
+/* -------------------------------------- */
+
+html{
+	font-size: $base-font-size;
+	line-height: 1;
+	margin-top: 0;
+
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+body{
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-family: $body-font;
+	font-weight: normal;
+	font-weight: 400;
+	color: $text-color;
+}
+
+h1,h2,h3,h4,h5,h6{
+	line-height: 1.5em;
+	font-family: $headline-font;
+}
+
+h1 {
+	color: $headline-color;
+}
+
+h2,h3,h4,h5,h6 {
+	color: $subheading-color;
+
+	small {
+		font-family: $font-sans;
+		font-size: mt(1);
+		font-weight: 500;
+		color: grey(30);
+	}
+}
+
+h1, .mt-6 { font-size: modular-type(6); }
+h2, .mt-5 { font-size: modular-type(5); }
+h3, .mt-4 { font-size: modular-type(4); }
+h4, .mt-3 { font-size: modular-type(3); }
+h5, .mt-2 { font-size: modular-type(2); }
+h6, .mt-1 { font-size: modular-type(1); }
+
+h1,h2,h3,h4,h5,h6,
+p,
+ul,
+ol,
+dl,
+blockquote,
+hr {
+	margin: $base-type-margin 0;
+}
+
+hr{
+	border: none;
+	background: $headline-color;
+	height: $base-hr-size;
+	margin: $base-hr-margin 0;
+}
+
+blockquote {
+	font-size: modular-type(2);
+	padding: 1em 0 1em 1.5em;
+	border-left: 2px solid $accent-color;
+}
+
+figure {
+	margin: $base-block-margin 0;
+	display: block;
+	width: 100%;
+}
+
+figcaption {
+	margin-top: 1rem;
+	font-size: .85rem;
+	color: grey(40);
+}
+
+strong {
+	color: $headline-color;
+}
+
+a {
+	color: $link-color;
+
+	&:hover {
+		color: $text-color;
+	}
+}
+
+p {
+	line-height: $base-line-height;
+}
+
+
+/* Helpers */
+/* -------------------------------------- */
+
+.text-centered {
+	text-align: center;
+
+	@include map-to-grid("max") {
+		text-align: center;
+	}
+}
+
+.text-right {
+	text-align: right;
+
+	@include map-to-grid("max") {
+		text-align: right;
+	}
+}
+
+
+.hr{
+	display: block;
+	border-bottom: 1px solid $headline-color;
+	margin: 6em 0;
+
+	&::before{
+		content: "";
+	}
+}
+
+.tracked {
+	@include tracking();
+}
+
+.lead {
+	font-size: mt(2);
+	font-weight: 100;
+}

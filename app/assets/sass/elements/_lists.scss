@@ -1,0 +1,107 @@
+@mixin ol-styled($increment-name, $after: ".", $indent: 3em, $counter-size: 1.5em){
+	list-style-type: none;
+	counter-reset: #{$increment-name};
+	margin-left: $indent;
+	padding-left: 0;
+
+	li {
+		position: relative;
+
+		&:before {
+			content: counter(#{$increment-name}) $after;
+			counter-increment: #{$increment-name};
+
+			position: absolute;
+			top: 0;
+			font-size: $counter-size;
+			left: (-1em * $indent / $counter-size);
+		}
+
+	}
+}
+
+@mixin list-unstyled {
+	list-style: none;
+	margin-left: 0;
+}
+
+.list-unstyled {
+	@include list-unstyled();
+}
+
+
+@mixin list-inline($spacing: .5em) {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		margin-right: $spacing;
+	}
+
+	li > a {
+		display: inline-block;
+		margin: 0;
+	}
+}
+
+.list-inline {
+	@include list-inline;
+}
+
+@mixin comma-list(){
+	li {
+		display: inline-block;
+
+		&:after {
+			content: ","
+		}
+
+		&:last-of-type:after {
+			content: "";
+		}
+
+		& + li {
+			margin-left: .25rem;
+		}
+	}
+}
+
+
+ul {
+	list-style-type: disc;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul,ol {
+	margin-left: 2rem;
+
+	& & {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+}
+
+li {
+	margin: .5em 0;
+}
+
+dl {
+	dt,dd {
+		margin: 0;
+		padding: 0;
+	}
+
+	dt {
+		font-weight: bold;
+		font-weight: 700;
+	}
+
+	dd + dt {
+		margin-top: 1em;
+	}
+}

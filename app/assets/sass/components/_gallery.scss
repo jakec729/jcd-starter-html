@@ -1,0 +1,24 @@
+.gallery-grid {
+
+	.grid-item {
+		margin-bottom: 1em;
+
+		a {
+			display: block;
+		}
+
+		&:hover img {
+			opacity: 0.8;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			@include transition;
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+}

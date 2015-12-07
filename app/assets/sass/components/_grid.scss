@@ -1,0 +1,264 @@
+@mixin clearfix{
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin column-base{
+	float: left;
+	display: block;
+}
+
+%column-base {
+	@include column-base;
+}
+
+@mixin centered($width: null) {
+	width: $width;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	float: none !important;
+}
+
+%full-width {
+	display: block;
+	float: none;
+	width: 100%;
+}
+
+@mixin group(){
+	@include clearfix;
+	display: block;
+	width: 100%;
+}
+
+@function bp($id) {
+	@return map-get($grid-bp-array, $id);
+}
+
+
+@function col-width( $cols, $total: $default-total-cols, $gutter: $default-gutter ){
+	$remaining-width: 100% - ($total - 1) * $gutter;
+	$absorbed: ($cols - 1) * $gutter;
+	$col-width: $remaining-width / $total * $cols + $absorbed;
+
+	@return $col-width;
+}
+
+@mixin column( $cols, $total: $default-total-cols, $gutter: $default-gutter ) {
+    width: col-width( $cols, $total, $gutter );
+}
+
+@mixin col-push( $cols, $total: $default-total-cols, $gutter: $default-gutter ) {
+	margin-left: col-width( $cols, $total, $gutter ) + ($gutter * 2) !important;
+}
+
+@mixin col-border-split($cols, $split, $border: 1px solid grey(20)) {
+	$cover: ( col-width( $split ) + ($default-gutter * 2) );
+	$spacer: $cover / 2;
+	width: col-width($cols) + $spacer;
+	margin-left: $spacer !important;
+	padding-left: $spacer;
+	border-left: $border;
+}
+
+@mixin render-columns( $pre: 'col' ){
+
+	[class*="col-"] {
+		@extend %full-width;
+		@include column-base;
+
+		& + & {
+			margin-left: $default-gutter;
+		}
+
+		& + .col-12 {
+			margin-left: 0;
+		}
+	}
+
+	@for $i from 1 through $default-total-cols {
+		.#{$pre}-#{$i} {
+			@include column-base;
+			@include column( $i );
+		}
+	}
+
+}
+
+@mixin render-responsive-columns( $pre: 'col', $bp-array: $grid-bp-array ){
+
+	@each $id in map-keys($bp-array) {
+
+		@include bp-min( map-get($bp-array, $id) ) {
+
+			@for $i from 1 through $default-total-cols {
+				.#{$pre}-#{$id}-#{$i} {
+					@include column( $i );
+					
+					[class*="col-"] + & {
+						margin-left: $default-gutter;
+					}
+				}
+				
+				.#{$pre}-#{$id}-#{$i}-split-1 {
+					@include col-border-split( $i, 1 );
+				}
+				
+				.#{$pre}-#{$id}-#{$i}-split-2 {
+					@include col-border-split( $i, 2 );
+				}
+				
+				.#{$pre}-#{$id}-offset-#{$i} {
+					@include col-push( $i );
+				}
+			}
+
+		}
+
+		@include bp-max( ( bp($id) - 1px ) ){
+			.row-reset-#{$id} {
+				margin-left: 0 !important;
+			}
+		}
+	}
+			
+}
+
+
+@mixin flex-group($direction: row){
+	display: flex;
+	flex-direction: $direction;
+}
+
+@function flex-width( $cols, $total: $default-total-cols, $gutter: $default-gutter ){
+	$col-width: col-width( $cols, $total, $gutter );
+
+	@return $col-width;
+}
+
+@mixin flex-column( $cols, $total: $default-total-cols, $gutter: $default-gutter, $pre: "flex" ){
+	width: flex-width($cols, $total, $gutter);
+
+	& + [class*=#{$pre}]{
+		margin-left: $gutter;
+	}
+
+}
+
+@mixin responsive-flex-column( $breakpoint, $cols, $total: $default-total-cols ){
+	width: 100%;
+
+	@include bp-min($breakpoint){
+		@include flex-column( $cols, $total );
+	}
+}
+
+@mixin responsive-flex-group( $breakpoint: null ){
+	@include bp-min($breakpoint){
+		@include flex-group();
+	}
+}
+
+@mixin render-flex-cols( $pre: 'flex', $bp-array: $grid-bp-array ){
+	@for $i from 1 through $default-total-cols {
+		.#{$pre}-#{$i}{
+			@include flex-column( $cols: $i );
+		}
+
+		@each $id in map-keys($bp-array){
+			.#{$pre}-#{$id}-#{$i} {
+				@include responsive-flex-column( map-get($bp-array, $id), $i);
+			}
+		}
+	}
+
+	@each $id in map-keys($bp-array){
+		.#{$pre}-group-#{$id} {
+			@include responsive-flex-group( map-get($grid-bp-array, $id) );
+		}
+	}
+}
+
+@mixin grid-item($target, $total){
+	$row: $total / $target;
+	$repeat: "#{$row}n+1";
+
+	@include column($target, $total);
+
+	& + .grid-item {
+		margin-left: $default-gutter;
+	}
+
+	&:nth-of-type(#{$repeat}){
+		margin-left: 0;
+	}
+}
+
+
+
+/* STYLES */
+/* -------------------------------------- */
+
+@mixin set-container-size($min, $width) {
+	@include bp-min($min){
+		width: $width;
+	}
+}
+
+@mixin container() {
+	margin: 0 auto;
+	width: $container-width;
+	
+	@include clearfix;
+	@include set-container-size($container-min, $content-width);
+	@include set-container-size($container-min-lg, $screen-lg);
+	@include set-container-size($container-min-xl, $screen-xl);
+}
+
+.container {
+	@include container();
+}
+
+.row,
+.group {
+	@include group;
+}
+
+.flex-group {
+	@include flex-group;
+}
+
+.flex-row-center {
+	align-items: center;
+}
+
+.centered {
+	@include centered();
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.grid-3-up {
+	.grid-item {
+		@include bp-between($mobile, $medium-screen){
+			@include grid-item(6,12);
+		}
+		@include bp-min($medium-screen){
+			@include grid-item(4,12);
+		}
+	}
+}
+
+@include render-columns();
+@include render-responsive-columns();
+@include render-flex-cols();
+
+
+
+

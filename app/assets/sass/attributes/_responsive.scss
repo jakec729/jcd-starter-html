@@ -1,0 +1,26 @@
+@mixin breakpoint($point, $direction: 'min') {
+    @media (#{$direction}-width: $point)  { @content; }
+}
+
+@mixin bp-between($min, $max) {
+	$new-max: $max - 1px;
+	@media screen and ( min-width: $min ) and ( max-width: $new-max ) { @content; }
+}
+
+@mixin bp-min($point){
+	@include breakpoint($point, $direction: 'min'){ @content; }
+}
+
+@mixin bp-max($point){
+	@media (max-width: ($point - 1px))  { @content; }
+}
+
+@mixin map-to-grid($direction: "max") {
+	@each $id in map-keys($grid-bp-array){
+		&-#{$direction}-#{$id} {
+			@include breakpoint( map-get($grid-bp-array, $id), $direction ) {
+				@content
+			}
+		}
+	}
+}

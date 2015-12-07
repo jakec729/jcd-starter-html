@@ -1,0 +1,18 @@
+@mixin circle-image {
+	border-radius: 50%;
+}
+
+.avatar {
+	@include circle-image
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+figure img {
+	max-width: 100%;
+	display: block;
+}

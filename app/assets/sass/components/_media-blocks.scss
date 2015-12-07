@@ -1,0 +1,7 @@
+.media-block {
+	@include bp-max($medium-screen) {
+		& + & {
+			margin-top: 4em;
+		}
+	}
+}

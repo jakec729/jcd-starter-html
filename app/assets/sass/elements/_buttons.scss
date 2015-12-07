@@ -1,0 +1,42 @@
+
+@mixin pill($padding: 1em, $radius: .25rem){
+	padding: $padding;
+	border-radius: $radius;	
+	display: inline-block;
+	width: initial;
+	line-height: 1;
+}
+
+@mixin button($padding: 1em, $radius: .25rem){
+	margin: $base-type-margin 0;
+	text-decoration: none;
+	@include pill($padding, $radius);
+	@include transition;
+}
+
+@mixin button-colors($text, $bg) {
+	color: $text;
+	background-color: $bg;
+
+	&:hover {
+		color: $bg;
+		background-color: $text;
+	}
+}
+
+button,
+.btn {
+	@include button();
+}
+
+.btn--small {
+	@include button(.5em);
+}
+
+.btn-primary {
+	@include button-colors($white, $primary-color);
+}
+
+.btn-default {
+	@include button-colors(grey(60), $white);
+}

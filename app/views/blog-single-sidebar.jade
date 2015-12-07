@@ -1,0 +1,56 @@
+extends layouts/master-sidebar.jade
+
+block hero
+	header.page__header.dark
+		div.container
+			h1.page__heading Article w/ Sidebar
+
+block content
+	article.article.single
+		header.article__header
+			p.article__meta Dec 12, 2015
+			ul.list-inline.article__tags
+				li: a.btn.btn--small.btn-default(href="#") Essay
+				li: a.btn.btn--small.btn-default(href="#") Post
+				li: a.btn.btn--small.btn-default(href="#") Writing
+				li: a.btn.btn--small.btn-default(href="#") Draft
+		figure.article__img
+			img(src="http://unsplash.it/800/400/", alt="Placeholder Blog Image")
+		div.article__body
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam, qui quo quod similique, illum ab quisquam illo veritatis ullam tempora eaque temporibus? Optio, modi.
+			p Quis autem voluptate, fugit expedita esse quae dignissimos magnam labore impedit doloremque vero architecto nihil ad fuga laboriosam dolor earum eos recusandae cupiditate eveniet? Eligendi.
+			p Totam a iure labore inventore natus laboriosam architecto nisi atque. Iusto nostrum voluptatibus corrupti, iste aut error recusandae nobis fuga architecto ex autem odit corporis?
+
+			h2 Lorem ipsum dolor sit amet.
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio cum nostrum sed. Laborum, dolor aperiam natus excepturi officiis fugiat temporibus fuga culpa illum repellendus. Unde quasi perferendis maxime quae. Modi.
+			p Est temporibus illum voluptatem impedit hic repudiandae quas. Harum architecto fugit ipsa recusandae veniam quia, explicabo culpa possimus provident, reiciendis sint tempore corporis at praesentium iusto incidunt tenetur cum velit.
+			p Porro temporibus, sapiente laborum ea aperiam blanditiis aliquid, omnis sint ipsa esse, ducimus officiis similique beatae saepe modi fugit. Consequatur ullam maiores voluptatem quae at fugiat, temporibus dolore aperiam doloremque.
+			ul
+				li Lorem ipsum dolor sit.
+				li Consectetur, recusandae culpa autem.
+				li Ipsa quod fuga minus?
+				li Nostrum culpa, libero in?
+				li Natus, architecto facilis nihil?
+			p Laudantium ad velit accusamus quidem repellendus autem quo, animi, quasi. Amet doloribus odit maiores neque, molestias aperiam necessitatibus quasi sapiente quo mollitia a iusto nobis ut. Non facilis consequatur odio.
+			p Odio commodi, quisquam veniam accusantium recusandae quod laboriosam corporis facere non officia laudantium accusamus natus, saepe delectus ex maxime in hic laborum eos similique ad esse possimus. Numquam itaque, at!
+
+			h2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam obcaecati neque, repellendus.
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum vero, quam. Blanditiis, reiciendis! Fugiat eligendi neque voluptates enim voluptas quae laudantium esse, ipsam, animi dolores ab beatae eaque optio tenetur repellat, commodi ex unde dicta dignissimos ullam magni iste necessitatibus reprehenderit laborum veniam! Minima, similique?
+			p Cupiditate minus nihil dolorum quod, accusamus enim nostrum id, incidunt vero similique, earum, eius a molestiae modi! Reiciendis facilis, totam dignissimos quisquam molestias delectus nihil alias assumenda a, velit dolore numquam. Incidunt, consectetur ullam tempora nobis, nemo totam reprehenderit enim similique placeat porro veniam itaque.
+
+			h3 Lorem ipsum dolor sit amet.
+			p Quidem minima, cumque, suscipit ut maiores culpa natus explicabo reiciendis sequi sit aspernatur quia laudantium ipsam eligendi recusandae id cum dolorem voluptatem ullam asperiores necessitatibus, rem fugit ab. Dolor, cupiditate provident libero doloribus voluptatum dolorum ratione saepe maiores sapiente iste cum magnam facilis quidem in?
+			ol
+				li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				li Temporibus laborum odio, eum sit incidunt harum, consectetur.
+				li Dicta fugiat nostrum laborum, accusamus possimus eos tempore?
+				li Beatae magni provident quos, et natus rem, sed.
+				li Sit, neque minus inventore quis, ipsa commodi. Omnis.
+				li Ipsa esse dolore ut quidem, iste porro molestiae.
+
+	
+	footer.article__footer
+		nav.post-nav.direction-nav
+			ul.list-unstyled
+				li.left: a(href="#") &larr; Previous Post
+				li.right: a(href="#") Next Post &rarr;

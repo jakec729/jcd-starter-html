@@ -1,0 +1,171 @@
+
+/* COLORS */
+/* -------------------------------------- */
+
+// BASIC COLORS
+$black: 			black !default;
+$white: 			white !default;
+$cyan: 				cyan !default;
+$dark-blue:			darkblue !default;
+$green: 			forestgreen !default;
+$orange:			orange !default;
+$red: 				red !default;
+$yellow: 			yellow !default;
+
+// GREYS
+$light-grey:		darken(white, 15%) !default;
+$medium-grey:		darken(white, 50%) !default;
+$dark-grey:			darken(white, 85%) !default;
+
+// MISC COLORS
+$off-white: 		darken($white, 4%) !default;
+
+// SOCIAL COLORS
+$twitter: 			#00aced !default;
+$facebook: 			#3b5998 !default;
+$googleplus: 		#dd4b39 !default;
+$pinterest: 		#cb2027 !default;
+$behance: 			#1769ff !default;
+$linkedin: 			#007bb6 !default;
+$youtube: 			#bb0000 !default;
+$vimeo: 			#aad450 !default;
+$tumblr: 			#32506d !default;
+$instagram: 		#517fa4 !default;
+$flickr: 			#ff0084 !default;
+$dribbble: 			#ea4c89 !default;
+$quora: 			#a82400 !default;
+$foursquare: 		#0072b1 !default;
+$forrst: 			#5B9A68 !default;
+$vk: 				#45668e !default;
+$wordpress: 		#21759b !default;
+$stumbleupon: 		#EB4823 !default;
+$yahoo: 			#7B0099 !default;
+$blogger: 			#fb8f3d !default;
+$soundcloud: 		#ff3a00 !default;
+
+// SITE COLORS
+$primary-color:		$dark-blue !default;
+$primary-dark: 		darken($primary-color, 20%);
+$accent-color:		rgb(16,120,152) !default;
+$aside-color:		$medium-grey !default;
+$text-color:		$dark-grey !default;
+$headline-color:	darken($primary-color, 10%) !default;
+$subheading-color: 	$primary-color !default;
+$link-color: 		$accent-color !default;
+$background-color:	$off-white !default;
+
+
+/* TYPOGRAPHY */
+/* -------------------------------------- */
+
+// Base Sizes
+$base-font-size: 16px !default;
+$base-line-height: 1.6em !default;
+$base-type-margin: 1.5em !default;
+$base-block-margin: (2 * $base-type-margin) !default;
+$modular-type-ratio: (7/6) !default;
+$default-tracking: .2em !default;
+
+// Base Fonts
+$font-serif: "Adobe Garamond Pro", Georgia, serif !default;
+$font-sans: "Roboto", "Franklin Gothic Book", Helveitca, Arial, sans-serif !default;
+$headline-font: $font-serif !default;
+$body-font: $font-sans !default;
+
+// Blocks
+$block-color: $light-grey !default;
+$block-width: 2em !default;
+$block-margin: 1.5em !default;
+$block-height: .125em !default;
+
+// Indents
+$base-indent: 2em !default;
+
+// HR
+$base-hr-size: 2px !default;
+$base-hr-margin: ($base-block-margin * 2) !default;
+
+// STORY
+$post-font: $font-serif !default;
+$post-font-size: 1.25rem !default;
+$post-line-height: 1.9rem !default;
+$post-inset-padding: 6rem !default;
+$post-color: $text-color !default;
+
+$article-single-sidebar-width: 18% !default;
+$article-blockquote-indent: 2rem !default;
+
+/* Breakpoint Vars */
+/* -------------------------------------- */
+
+$small-mobile: 550px !default;
+$screen-xs: $small-mobile;
+
+$mobile: 640px !default;
+$screen-sm: $mobile;
+
+$tablet: 720px !default;
+$screen-tb: $tablet;
+
+$default-gutter: 2% !default;
+$default-total-cols: 12 !default;
+
+$container-width: 90% !default;
+
+$medium-screen: 840px !default;
+$screen-md: $medium-screen;
+
+$container-min: 1024px !default;
+$content-width: 960px !default;
+
+$container-min-lg: 1080px !default;
+$desktop: 1024px !default;
+$screen-lg: $desktop;
+
+$container-min-xl: 1280px !default;
+$large: 1200px !default;
+$screen-xl: $large;
+
+$grid-bp-array: (
+	xs: $small-mobile,
+	sm: $mobile,
+	tb: $tablet,
+	md: $medium-screen,
+	lg: $desktop,
+	xl: $large
+) !default;
+
+
+/* Animation Vars */
+/* -------------------------------------- */
+
+$fast: 0.2s !default;
+$pace: 0.5s !default;
+$slow: 1.0s !default;
+
+
+/* Longform Vars */
+/* -------------------------------------- */
+
+@function context( $desired, $container ){
+	@return $desired / $container * 100%;
+}
+
+$longform-content-width: 60%;
+$longform-sidebar-width: (100% - $longform-content-width) / 2;
+$longform-aside-width: context($longform-sidebar-width, $longform-content-width);
+$longform-figure-outdent: 2rem;
+
+
+/* Layout Vars */
+/* -------------------------------------- */
+
+$default-corners: .25em !default;
+
+
+/* PLUGIN Vars */
+/* -------------------------------------- */
+
+$fa-font-path: "../vendor/font-awesome/fonts";
+
+
